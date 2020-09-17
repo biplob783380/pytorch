@@ -83,3 +83,16 @@ torch.rand(3,3).matrix_power(2)
 # dot product
 torch.dot(torch.tensor([1,2,3]),torch.tensor([3,4,5]))
 
+# More tensor operations
+torch.sum(torch.rand(3, 4), dim=0) # sum on that dim
+torch.argmax(torch.rand(3,4), dim=0) # returns index values only
+torch.max(torch.rand(3,4), dim=0) # return max value and index of given dim
+torch.min(torch.rand(3,4), dim=0) # return min
+torch.abs(torch.randn(3,4)) # return all absolute values
+torch.mean(torch.rand(3,4).float(), dim=0) # return mean
+torch.eq(torch.rand(3,4), torch.rand(3,4)) # elementwise check for similarity between two matrix
+torch.sort(torch.tensor([4,3,2,5]), dim=0, descending=False) # returns values and indeces; True to dec, False to asc.
+torch.clamp(torch.tensor([4,3,2,5]), min=3) # set minimum to 3
+torch.any(torch.tensor([0,0,1,0]).bool()) # is any of these are true
+torch.all(torch.tensor([3,4,1,0]).bool()) # is all of these are true
+
