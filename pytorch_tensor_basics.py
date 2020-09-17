@@ -96,3 +96,45 @@ torch.clamp(torch.tensor([4,3,2,5]), min=3) # set minimum to 3
 torch.any(torch.tensor([0,0,1,0]).bool()) # is any of these are true
 torch.all(torch.tensor([3,4,1,0]).bool()) # is all of these are true
 
+
+
+x = torch.rand(10, 15)
+x[:]  # get all value
+x[: 6] # get 0 to before 6th index excluding 6th
+x[:, 4] # from all of 1st dim select only 4th index value of second dim
+x[2, 0:3] # from 2th index values returns 0 to 3 excluding 3th index;
+x[2, 0:3] = 1000 # assigning 100 to these
+
+
+x = torch.arange(10)
+x[(x>6) | (x<2)] # print both of conditions values
+x[(x>6) & (x<9)] # both condition is need to be true
+x[x.remainder(2)==0] # all even elements
+x[x%2==0] # all even elements [same as above]
+
+torch.where(x>5) # return where x>5
+torch.where(x>5, x, x+4) # if x>5 then return x else x+5
+torch.tensor([1,1,2,2,3,3]).unique() # return unique values
+torch.rand(3,4,3).ndimension() # return dimension count
+torch.rand(3,4,3).numel() # returns number of elements
+
+
+# Reshaping
+random = torch.rand(3,4)
+random.reshape(6,2)
+random.view(6,2)
+random.t() # transpose
+random.t().contiguous().view(12) # use of view when got error
+
+# concat : join on existing dimension
+torch.cat((torch.rand(2,3), torch.rand(2,3)), dim=1)
+
+# swipe dimensions
+x = torch.rand(2,3,5)
+x.permute(0, 2, 1) # 0 in its position, 2 in 1's position and 1 is on 2's position
+
+# unsqueeze/ unsqueeze
+torch.rand([1,4,3]).squeeze().unsqueeze(dim=0).shape
+
+
+
