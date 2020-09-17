@@ -1,1 +1,1 @@
-# pytorch
+# pytorch tutorial notes for beginers
