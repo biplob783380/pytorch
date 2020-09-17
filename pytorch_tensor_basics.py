@@ -1,3 +1,6 @@
+# This note is from his video, link below:
+# https://www.youtube.com/watch?v=x9JiIFvlUwk&list=PLhhyoLH6IjfxeoooqP9rhU3HJIAVAJ3Vz&index=3
+
 import torch  # importing pytorch library
 
 
